@@ -11,4 +11,4 @@ FROM hr.employees AS emp
 JOIN hr.jobs AS jobs
 WHERE emp.JOB_ID = jobs.JOB_ID
 GROUP BY jobs.JOB_TITLE
-ORDER BY ROUND(AVG(emp.SALARY), 2);
+ORDER BY ROUND(AVG(emp.SALARY), 2), jobs.JOB_TITLE;
