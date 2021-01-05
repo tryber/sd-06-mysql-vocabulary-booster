@@ -3,4 +3,5 @@ IF(country.region_id = region.region_id, 'incluído', 'não incluído') AS 'Stat
 FROM
 countries AS country,
 regions AS region
-WHERE region.region_name = 'Europe';
+WHERE region.region_name = 'Europe'
+ORDER BY country.country_name;
