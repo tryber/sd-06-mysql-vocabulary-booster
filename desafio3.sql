@@ -3,5 +3,5 @@ SELECT
   (MAX_SALARY - MIN_SALARY) AS 'Diferença entre salários máximo e mínimo'
 FROM hr.jobs
 ORDER BY
-  Cargo ASC,
-  'Diferença entre salários máximo e mínimo' ASC;
+  (MAX_SALARY - MIN_SALARY) ASC,
+  job_title ASC;
