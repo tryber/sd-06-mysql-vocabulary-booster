@@ -9,7 +9,7 @@ SELECT job_title AS 'Cargo', ROUND(AVG(emp.salary), 2) AS 'Média Salarial',
 		ELSE 'CEO'
 	END AS 'Senioridade'
 FROM hr.jobs job
-    INNER JOIN hr.employees AS emp
-    ON job.job_id = emp.job_id
+	INNER JOIN hr.employees AS emp
+	ON job.job_id = emp.job_id
 GROUP BY job_title
 ORDER BY 'Média salarial', job_title;
