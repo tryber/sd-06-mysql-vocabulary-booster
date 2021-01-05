@@ -9,8 +9,7 @@
 -- Salário máximo entre 20001 e 30000 -> Alto
 -- Salário máximo acima de 30000 -> Altíssimo
 -- Os resultados devem estar ordenados pelo nome do cargo em ordem alfabética.
-SELECT * FROM hr.jobs;
-
+-- SELECT * FROM hr.jobs;
 SELECT job_title AS `Cargo`,
 CASE
 WHEN MAX_SALARY BETWEEN 5000 AND 10000 THEN 'Baixo'
