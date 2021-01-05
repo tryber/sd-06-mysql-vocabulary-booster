@@ -1,5 +1,4 @@
-USE hr;
-SELECT c.COUNTRY_NAME AS País,
+SELECT c.COUNTRY_NAME País,
   IF (r.REGION_NAME = 'Europe', 'incluído', 'não incluído') AS 'Status Inclusão'
     FROM countries c
       LEFT JOIN regions r
