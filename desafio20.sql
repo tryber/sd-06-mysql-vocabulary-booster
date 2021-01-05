@@ -9,11 +9,11 @@ d.DEPARTMENT_NAME AS 'Departamento',
 j.JOB_TITLE AS 'Cargo'
 FROM hr.employees AS e
 LEFT JOIN hr.job_history AS jh
-  ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
 LEFT JOIN hr.departments AS d
-	ON d.DEPARTMENT_ID = jh.DEPARTMENT_ID
+ON d.DEPARTMENT_ID = jh.DEPARTMENT_ID
 LEFT JOIN hr.jobs AS j
-	ON j.JOB_ID = jh.JOB_ID
+ON j.JOB_ID = jh.JOB_ID
 WHERE e.EMAIL = employee_email
 ORDER BY d.DEPARTMENT_NAME ASC, j.JOB_TITLE ASC;
 
