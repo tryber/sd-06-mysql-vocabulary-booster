@@ -10,4 +10,4 @@ FROM hr.employees AS E
 JOIN hr.jobs AS J
 ON J.JOB_ID = E.JOB_ID
 GROUP BY Cargo
-ORDER BY ROUND(AVG(E.SALARY), 2), Cargo;
+ORDER BY ROUND(AVG(E.SALARY), 2), Cargo ASC;
