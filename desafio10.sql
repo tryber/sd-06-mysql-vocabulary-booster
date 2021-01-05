@@ -7,4 +7,4 @@ INNER JOIN w3schools.products AS prod
 ON prod.ProductID = orderD.ProductID
 GROUP BY Produto
 HAVING Média > 20
-ORDER BY Média;
+ORDER BY Média, Produto;
