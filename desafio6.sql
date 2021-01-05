@@ -1,9 +1,9 @@
 SELECT
-CONCAT(first_name, ' ', last_name) AS `Nome completo`,
-job_title AS Cargo,
-hire_date AS `Data de início do cargo`,
-department_name AS Departamento
+jobs.job_title AS Cargo,
+max_salary - min_salary AS `Variação Salarial`,
+ROUND(min_salary/12, 2) AS 'Média mínima mensal',
+ROUND(max_salary/12, 2) AS 'Média máxima mensal'
 FROM employees
 INNER JOIN jobs ON employees.job_id = jobs.job_id
-INNER JOIN departments ON employees.department_id = departments.department_id
-ORDER BY `Nome completo` DESC, Cargo;
+GROUP BY jobs.job_title
+ORDER BY `Variação Salarial`, Cargo;
