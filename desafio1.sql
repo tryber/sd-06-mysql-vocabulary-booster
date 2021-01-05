@@ -4,4 +4,3 @@ SELECT c.COUNTRY_NAME País,
     FROM countries c
       LEFT JOIN regions r
         ON c.REGION_ID = r.REGION_ID;
-  
