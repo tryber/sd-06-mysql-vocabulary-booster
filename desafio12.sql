@@ -7,5 +7,5 @@ a.SALARY AS `Salário funcionário 2`,
 a.PHONE_NUMBER AS `Telefone funcionário 2`
 FROM hr.employees e
 JOIN hr.employees a ON e.JOB_ID = a.JOB_ID
-WHERE e.PHONE_NUMBER <> a.PHONE_NUMBER
+WHERE e.EMPLOYEE_ID <> a.EMPLOYEE_ID
 ORDER BY `Nome completo funcionário 1` ASC, `Nome completo funcionário 2` ASC;
