@@ -1,9 +1,10 @@
-SELECT job_title AS 'Cargo', 
-CASE
-  WHEN max_salary BETWEEN 5000 AND 10000 THEN 'Baixo'
-  WHEN max_salary BETWEEN 10001 AND 20000 THEN 'Médio'
-  WHEN max_salary BETWEEN 20001 AND 30000 THEN 'Alto'
-  WHEN max_salary > 30000 THEN 'Altíssimo'
-END AS 'Nível'
-FROM jobs
-ORDER BY job_title;
+SELECT
+CONCAT(first_name, ' ', last_name) AS 'Nome completo',
+job_title AS Cargo,
+hire_date AS 'Data de início do cargo',
+department_name AS Departamento
+FROM employees
+INNER JOIN jobs ON employees.job_id = jobs.job_id
+INNER JOIN departments ON employees.department_id = departments.department_id
+GROUP BY jobs.job_title
+ORDER BY CONCAT(first_name, ' ', last_name) DESC, Cargo;
