@@ -1,4 +1,5 @@
-SELECT DISTINCT c.Country AS `País`
-FROM w3schools.customers c
-INNER JOIN w3schools.suppliers s ON c.Country = s.Country
+(SELECT DISTINCT Country AS `País` FROM w3schools.customers)
+UNION ALL
+(SELECT DISTINCT Country AS `País` FROM w3schools.suppliers)
+ORDER BY `País`
 LIMIT 5;
