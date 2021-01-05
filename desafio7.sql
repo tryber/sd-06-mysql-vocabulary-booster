@@ -1,0 +1,1 @@
+SELECT CONCAT(UPPER(emp.FIRST_NAME), ' ', UPPER(emp.LAST_NAME)) AS 'Nome completo', job_history.START_DATE AS 'Data de início', emp.SALARY AS 'Salário' FROM hr.employees AS emp INNER JOIN hr.job_history AS job_history ON emp.EMPLOYEE_ID = job_history.EMPLOYEE_ID WHERE MONTH(job_history.START_DATE) BETWEEN 1 AND 3 ORDER BY `Nome Completo`, `Data de início`;
