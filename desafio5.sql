@@ -4,5 +4,5 @@ MAX_SALARY-MIN_SALARY AS `Variação Salarial`,
 ROUND(AVG(MIN_SALARY/12),2) AS 'Média mínima mensal',
 ROUND(AVG(MAX_SALARY/12),2) AS 'Média máxima mensal'
 FROM hr.jobs
-GROUP BY hr.jobs.JOB_TITLE
-ORDER BY `Variação Salarial`, hr.jobs.JOB_TITLE;
+GROUP BY JOB_TITLE
+ORDER BY `Variação Salarial`, JOB_TITLE;
