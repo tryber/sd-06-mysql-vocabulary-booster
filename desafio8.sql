@@ -7,4 +7,4 @@ ON customers.CustomerID = orders.CustomerID
 INNER JOIN w3schools.shippers AS shippers
 ON orders.ShipperID = shippers.ShipperID
 WHERE shippers.ShipperName <> 'Federal Shipping'
-ORDER BY customers.ContactName, shippers.ShipperName;
+ORDER BY customers.ContactName, shippers.ShipperName, orders.OrderDate;
