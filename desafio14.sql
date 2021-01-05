@@ -1,4 +1,4 @@
-SELECT Country AS País
+(SELECT Country AS País
 FROM w3schools.customers)
 UNION
 (SELECT Country

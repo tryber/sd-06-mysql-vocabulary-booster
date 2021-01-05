@@ -4,5 +4,5 @@ c1.Country AS 'País',
 FROM w3schools.customers AS c1
 LEFT JOIN w3schools.customers AS c2
   ON c1.Country = c2.Country
-GROUP BY c1.ContactName
+GROUP BY c1.ContactName, c1.Country
 ORDER BY c1.ContactName;
