@@ -6,7 +6,6 @@
 -- Os resultados devem estar ordenados pelo nome do país em ordem alfabética.
 SELECT * FROM hr.countries;
 
-SELECT COUNTRY_NAME AS `País`,
-if(REGION_ID = 1, "incluído", "não incluído" ) AS `Status Inclusão`
+SELECT COUNTRY_NAME AS `País`, if(REGION_ID = 1, "incluído", "não incluído" ) AS `Status Inclusão`
 FROM hr.countries
 ORDER BY COUNTRY_NAME
