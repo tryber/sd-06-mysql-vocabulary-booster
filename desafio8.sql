@@ -1,9 +1,9 @@
-SELECT job_title AS 'Cargo', 
-CASE
-  WHEN max_salary BETWEEN 5000 AND 10000 THEN 'Baixo'
-  WHEN max_salary BETWEEN 10001 AND 20000 THEN 'Médio'
-  WHEN max_salary BETWEEN 20001 AND 30000 THEN 'Alto'
-  WHEN max_salary > 30000 THEN 'Altíssimo'
-END AS 'Nível'
-FROM jobs
-ORDER BY job_title;
+SELECT
+CustomerName AS `Nome de contato`,
+OrderDate AS `Data do pedido`,
+ShipperName AS `Empresa que fez o envio`
+FROM order_details
+INNER JOIN orders ON order_details.OrderID = orders.OrderID 
+INNER JOIN customers ON orders.CustomerID = customers.CustomerID 
+INNER JOIN shippers ON shippers.ShipperID = orders.ShipperID
+ORDER BY `Nome de contato`, `Empresa que fez o envio`, `Data do pedido`
