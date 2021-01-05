@@ -183,9 +183,9 @@ MYSQL_USER=root MYSQL_PASSWORD= HOSTNAME=localhost npm test
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-0x-mysql-vocabulary-booster.git`.
+  * `git clone https://github.com/tryber/sd-06-mysql-vocabulary-booster.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-0x-mysql-vocabulary-booster`
+    * `cd sd-06-mysql-vocabulary-booster`
 
 2. Instale as dependências
   * `npm install`
@@ -241,7 +241,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ de colegas,
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-06`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
