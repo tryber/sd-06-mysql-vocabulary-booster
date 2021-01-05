@@ -1,8 +1,10 @@
-SELECT job_title AS 'Cargo',
-(max_salary - min_salary) AS 'Variação Salarial',
-ROUND(AVG(min_salary/12), 2) AS 'Média mínima mensal',
-ROUND(AVG(max_salary/12), 2) AS 'Média máxima mensal'
-FROM hr.employees AS emp
-INNER JOIN hr.jobs AS job
-ON (emp.job_id = job.job_id) GROUP BY job.job_title, (job.max_salary - job.min_salary)
-ORDER BY (job.max_salary - job.min_salary) ASC, job.job_title ASC;
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Nome completo',
+j.job_title AS 'Cargo',
+h.start_date AS 'Data de início do cargo',
+d.department_name AS 'Departamento'
+FROM hr.job_history AS h
+INNER JOIN hr.employees AS e
+INNER JOIN hr.jobs AS j ON j.job_id = h.job_id
+INNER JOIN hr.departments AS d ON d.department_id = h.department_id
+WHERE h.employee_id = e.employee_id
+ORDER BY 'Nome completo' DESC, 'Cargo' ASC;
