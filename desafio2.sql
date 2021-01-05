@@ -1,5 +1,5 @@
 SELECT 
-    JOB_TITLE AS `Cargo`, MAX_SALARY AS `Salario`,
+    JOB_TITLE AS `Cargo`,
     CASE
         WHEN MAX_SALARY <= 10000 THEN 'Baixo'
         WHEN MAX_SALARY BETWEEN 10001 AND 20000 THEN 'Médio'
