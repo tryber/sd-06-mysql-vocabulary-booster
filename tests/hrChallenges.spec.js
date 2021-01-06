@@ -40,7 +40,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe.only('Exiba os cargos com seu nível de renumeração associado, com base no salário máximo do cargo', () => {
+  describe('Exiba os cargos com seu nível de renumeração associado, com base no salário máximo do cargo', () => {
     it('Verifica o desafio 2', async () => {
       const challengeQuery = readFileSync('desafio2.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult2');
@@ -58,7 +58,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Exiba a média salarial e o nível de senioridade de todas as pessoas empregadas, agrupadas pelo cargo', () => {
+  describe.only('Exiba a média salarial e o nível de senioridade de todas as pessoas empregadas, agrupadas pelo cargo', () => {
     it('Verifica o desafio 4', async () => {
       const challengeQuery = readFileSync('desafio4.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult4');
