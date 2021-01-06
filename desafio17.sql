@@ -5,7 +5,7 @@ CREATE TRIGGER desafio17
 BEFORE INSERT ON orders
 FOR EACH ROW
 BEGIN
-    SET NEW.OrderDate = now();
+    SET NEW.OrderDate = CURRENT_DATE();
 END; $$
 
 DELIMITER ;
