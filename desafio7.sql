@@ -1,5 +1,5 @@
 SELECT
-  CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) 'Nome completo',
+  UPPER(CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME)) 'Nome completo',
   h.START_DATE 'Data de início',
   e.SALARY 'Salário'
 FROM hr.job_history h
