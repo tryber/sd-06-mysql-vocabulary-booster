@@ -11,4 +11,4 @@ GROUP BY
 HAVING
   `Número de compatriotas` <> 0
 ORDER BY
-  c1.ContactName;
+  c1.ContactName ASC;
