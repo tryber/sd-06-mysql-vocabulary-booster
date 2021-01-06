@@ -7,4 +7,4 @@ CASE
   WHEN max_salary > 30000  THEN 'Altíssimo'
 END AS 'Nível'
 FROM hr.jobs
-ORDER BY `Cargo` ASC, `Nível`;
+ORDER BY `Cargo` ASC;
