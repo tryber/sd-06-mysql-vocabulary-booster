@@ -1,5 +1,3 @@
-USE hr;
-
 SELECT JOB_TITLE as Cargo,
 CASE
 WHEN max_salary > 5000 AND max_salary <= 10000 THEN 'Baixo'
