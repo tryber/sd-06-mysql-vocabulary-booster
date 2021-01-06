@@ -5,7 +5,8 @@ WHEN t1.`Média salarial` BETWEEN 5801 AND 7500 THEN "Pleno"
 WHEN t1.`Média salarial` BETWEEN 7501 AND 10500 THEN "Sênior"
 WHEN t1.`Média salarial` > 10500 THEN "CEO"
 END AS Senioridade
-FROM(SELECT JOB_TITLE AS Cargo,
+FROM (SELECT JOB_TITLE AS Cargo, a.JOB_ID,
 ROUND((SELECT AVG(SALARY) FROM hr.employees AS c WHERE c.JOB_ID = a.JOB_ID), 2) AS `Média salarial`
 FROM hr.employees AS a INNER JOIN hr.jobs AS b ON a.JOB_ID = b.JOB_ID) AS t1
+GROUP BY t1.JOB_ID
 ORDER BY `Média salarial`, Cargo;
