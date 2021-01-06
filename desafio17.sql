@@ -6,7 +6,7 @@ BEFORE INSERT ON orders
 FOR EACH ROW
 BEGIN
 SET NEW.OrderDate = NOW();
-END$$
+END; $$
 DELIMITER ;
 
 INSERT INTO w3schools.orders (CustomerID, EmployeeID, ShipperID)
