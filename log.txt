@@ -1,4 +1,0 @@
-
-> sd-0x-mysql-vocabulary-booster@1.0.0 test
-> jest --runInBand
-
