@@ -37,7 +37,7 @@ describe('Desafios iniciais', () => {
       const expectedResult = require('./challengesResults/challengeResult1');
 
       expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
-    });
+    }, 30000);
   });
 
   describe('Exiba os cargos com seu nível de renumeração associado, com base no salário máximo do cargo', () => {
