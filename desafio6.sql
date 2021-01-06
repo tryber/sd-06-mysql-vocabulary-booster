@@ -7,4 +7,4 @@ FROM ((hr.employees
 INNER JOIN jobs ON employees.JOB_ID = jobs.JOB_ID)
 INNER JOIN departments ON employees.DEPARTMENT_ID = departments.DEPARTMENT_ID)
 ORDER BY concat(employees.FIRST_NAME, " ", employees.LAST_NAME) DESC,
-departments.DEPARTMENT_NAME ASC;
+jobs.JOB_TITLE ASC;
