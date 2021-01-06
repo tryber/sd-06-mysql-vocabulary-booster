@@ -1,15 +1,11 @@
 SELECT
-ContactName AS Nome,
-Country AS 'País',
+c.ContactName AS Nome,
+c.Country AS 'País',
 (
 SELECT Count(*) - 1
 FROM w3schools.customers 
 WHERE Country = c.Country
+HAVING Count(*) > 1
 ) AS 'Número de compatriotas' 
 FROM w3schools.customers AS c
-WHERE (
-SELECT Count(*) - 1
-FROM w3schools.customers 
-WHERE Country = c.Country
-) > 0
 ORDER BY Nome;
