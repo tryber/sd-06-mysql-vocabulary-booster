@@ -1,6 +1,9 @@
 SELECT
   CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) 'Nome completo',
-  e.HIRE_DATE 'Data de início',
+  h.START_DATE 'Data de início',
   e.SALARY 'Salário'
-FROM hr.employees e
+FROM hr.job_history h
+  LEFT JOIN hr.employees e
+  ON h.EMPLOYEE_ID = e.EMPLOYEE_ID
+WHERE MONTH(h.START_DATE) IN (1,2,3)
 ORDER BY e.FIRST_NAME, e.LAST_NAME, e.HIRE_DATE;
