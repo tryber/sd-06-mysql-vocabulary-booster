@@ -19,12 +19,20 @@
   ],
   "author": "Trybe",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "bugs": {
     "url": "https://github.com/betrybe/sd-0x-mysql-vocabulary-booster/issues"
   },
   "homepage": "https://github.com/betrybe/sd-0x-mysql-vocabulary-booster#readme",
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "acorn": ">=5.7.4",
+    "husky": "^4.3.6",
     "jest": "^24.9.0",
     "minimist": ">=1.2.2",
     "mysql-import": "^4.0.24"
