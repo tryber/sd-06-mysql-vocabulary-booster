@@ -7,4 +7,4 @@ WHEN ROUND(AVG(max_salary - min_salary), 2) > 10500 THEN 'CEO'
 END AS 'Senioridade'
 FROM hr.jobs 
 GROUP BY job_title
-ORDER BY `Media salarial` ASC, 'Senioridade';
+ORDER BY `Média salarial` ASC, 'Senioridade';
