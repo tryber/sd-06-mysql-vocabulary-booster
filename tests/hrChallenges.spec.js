@@ -67,7 +67,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe.only('Exiba os cargos com sua variação salarial e suas médias máxima e mínima mensal, considerando salários máximo e minímo como anuais', () => {
+  describe('Exiba os cargos com sua variação salarial e suas médias máxima e mínima mensal, considerando salários máximo e minímo como anuais', () => {
     it('Verifica o desafio 5', async () => {
       const challengeQuery = readFileSync('desafio5.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult5');
@@ -76,7 +76,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
+  describe.only('Faça um relatório que mostra o **histórico de cargos das pessoas empregadas**', () => {
     it('Verifica o desafio 6', async () => {
       const challengeQuery = readFileSync('desafio6.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult6');
