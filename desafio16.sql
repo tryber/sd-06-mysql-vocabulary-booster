@@ -1,11 +1,18 @@
-USE banco_de_dados; -- obrigatório para criar a função no banco correto
+USE hr;
 DELIMITER $$
 
-CREATE FUNCTION nome_da_function(parametro1, parametro2, ..., parametroN)
-RETURNS tipo_de_dado tipo_de_retorno
+CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(50))
+RETURNS INT READS SQL DATA
 BEGIN
-    query_sql
-    RETURN resultado_a_ser_retornado;
+	DECLARE resultado INT;
+    SELECT COUNT(jh.EMPLOYEE_ID)
+	FROM hr.employees AS e
+	INNER JOIN hr.job_history AS jh
+	ON jh.EMPLOYEE_ID = e.EMPLOYEE_ID
+	WHERE e.EMAIL = email INTO resultado;
+    RETURN resultado;
 END $$
 
 DELIMITER ;
+
+SELECT buscar_quantidade_de_empregos_por_funcionario("NKOCHHAR");
