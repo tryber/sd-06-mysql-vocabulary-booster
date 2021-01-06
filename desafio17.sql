@@ -1,5 +1,4 @@
 USE w3schools;
-DROP TRIGGER IF EXISTS insert_order_date;
 
 DELIMITER $$
 
