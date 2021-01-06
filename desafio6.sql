@@ -8,6 +8,6 @@ FROM hr.employees e
     ON e.JOB_ID = j.JOB_ID
   LEFT JOIN hr.departments d
     ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
-  LEFT JOIN hr.job_history h
+  INNER JOIN hr.job_history h
     ON e.EMPLOYEE_ID = h.EMPLOYEE_ID
 ORDER BY e.FIRST_NAME DESC, e.LAST_NAME DESC, j.JOB_TITLE ASC;
