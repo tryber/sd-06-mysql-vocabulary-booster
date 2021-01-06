@@ -11,7 +11,7 @@ FROM w3schools.order_details
 WHERE ProductID = od.ProductID
 ) AS 'Máxima',
 (
-SELECT AVG(Quantity)
+SELECT ROUND(AVG(Quantity), 2)
 FROM w3schools.order_details 
 WHERE ProductID = od.ProductID
 ) AS 'Média'
