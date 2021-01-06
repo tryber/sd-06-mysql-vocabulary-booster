@@ -6,5 +6,5 @@ WHEN max_salary > 20000 AND max_salary <= 30000 THEN 'Baixo'
 WHEN max_salary > 30000 THEN 'Altíssimo'
 ELSE NULL
 END AS 'Nível'
-FROM jobs
+FROM hr.jobs
 ORDER BY Cargo;
