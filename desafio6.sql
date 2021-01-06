@@ -6,4 +6,4 @@ FROM hr.employees AS em
 INNER JOIN hr.jobs AS jo ON em.JOB_ID = jo.JOB_ID
 INNER JOIN hr.job_history AS jh ON em.JOB_ID = jh.JOB_ID
 INNER JOIN hr.departments AS de ON em.DEPARTMENT_ID = de.DEPARTMENT_ID
-ORDER BY `Nome completo` DESC, Cargo;
+ORDER BY `Nome completo` DESC, Cargo ASC;
