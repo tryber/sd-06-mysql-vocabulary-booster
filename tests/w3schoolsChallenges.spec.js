@@ -97,12 +97,17 @@ describe('Desafios iniciais', () => {
 
   describe('Crie uma TRIGGER que, a cada nova inserção realizada na tabela `orders`, insira automaticamente a data atual na coluna `OrderDate`', () => {
     it('Verifica o desafio 17', async () => {
-      const challengeQuery = readFileSync('desafio17.sql', 'utf8').trim();
-      const expectedResult = require('./challengesResults/challengeResult17');
+      const challengeQuery = readFileSync("desafio17.sql", "utf8").trim();
+      const expectedResult = require("./challengesResults/challengeResult17");
+      
+      const createTriggerQuery = /CREATE TRIGGER.*END/si.exec(challengeQuery)[0];
 
-      const result = await sequelize.query(challengeQuery.toString(), {
-        type: 'SELECT',
-      });
+      await sequelize.query(createTriggerQuery);
+
+      await sequelize.query(`INSERT INTO orders (CustomerID, EmployeeID, ShipperID) VALUES (4,2,2);`, { type: 'INSERT' });
+      
+      const result = await sequelize.query(`SELECT CustomerID, EmployeeID, OrderDate, ShipperID FROM orders WHERE CustomerID = 4;`, { type: 'SELECT' });
+
       expect(result[0]).toEqual(expectedResult[0]);
       expect(result[1]).toEqual(expectedResult[1]);
       expect(result[2]).toEqual(expectedResult[2]);
