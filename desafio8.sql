@@ -7,5 +7,5 @@ INNER JOIN w3schools.orders AS o
 ON o.CustomerID = c.CustomerID
 INNER JOIN w3schools.shippers AS s
 ON o.ShipperID = s.ShipperID
-WHERE s.ShipperName LIKE 'Speedy Express' OR 'United Package'
+WHERE s.ShipperName IN ('Speedy Express', 'United Package')
 ORDER BY `Nome de contato`, `Empresa que fez o envio`, `Data do pedido`;
