@@ -6,4 +6,5 @@ INNER JOIN w3schools.orders AS ord
 ON ord.CustomerID  = cust.CustomerID
 INNER JOIN w3schools.shippers AS ship
 ON ship.ShipperID = ord.ShipperID
-ORDER BY cust.contactName, ship.ShipperName, ord.OrderDate ASC;
+WHERE ship.ShipperID = 1 OR ship.ShipperID = 2
+ORDER BY cust.contactName, ship.ShipperName, ord.OrderDate DESC;
