@@ -1,9 +1,6 @@
-SELECT pro.ProductName AS 'Produto',
-  MIN(ord.Quantity) AS 'Mínima',
-  MAX(ord.Quantity) AS 'Máxima',
-  ROUND(AVG(ord.Quantity), 2) AS 'Média'
-FROM w3schools.products AS pro
-INNER JOIN w3schools.order_details AS ord ON(pro.ProductID = ord.ProductID)
-GROUP BY pro.ProductID
-HAVING ROUND(AVG(ord.Quantity), 2) > 20.00
-ORDER BY `Média`, `Produto`;
+SELECT CONCAT(emp.FirstName,' ', emp.LastName) AS 'Nome completo',
+  COUNT(ord.EmployeeId) AS 'Total de pedidos'
+FROM w3schools.orders AS ord
+INNER JOIN w3schools.employees AS emp ON (emp.EmployeeId = ord.EmployeeId)
+GROUP BY ord.EmployeeId
+ORDER BY `Total de pedidos` ASC;
