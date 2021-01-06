@@ -4,7 +4,7 @@ DROP PROCEDURE IF EXISTS buscar_media_por_cargo;
 DELIMITER $$
 CREATE PROCEDURE buscar_media_por_cargo(
   IN job_name VARCHAR(35),
-  OUT salary_avg DOUBLE)
+  OUT salary_avg DECIMAL(8,2))
 BEGIN 
   SELECT AVG(e.SALARY) INTO salary_avg
   FROM hr.employees AS e
@@ -14,4 +14,4 @@ END $$
 DELIMITER ;
 
 CALL buscar_media_por_cargo('Programmer', @avg_salary);
-SELECT ROUND(@avg_salary,2) AS `Média salarial`;
+SELECT ROUND(@avg_salary, 2) AS `Média salarial`;
