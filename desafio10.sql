@@ -6,5 +6,5 @@ round(avg(od.Quantity), 2) as `Média`
 from w3schools.order_details as od
 inner join w3schools.products as p on od.ProductID = p.ProductID
 where od.Quantity > 20
-group by od.ProductID
+group by `Produto`
 order by `Média`, `Produto`;
