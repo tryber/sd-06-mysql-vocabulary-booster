@@ -6,5 +6,6 @@ SELECT
     f2.SALARY AS 'Salário funcionário 2',
     f2.PHONE_NUMBER AS 'Telefone funcionário 2'
 FROM hr.employees f1, hr.employees f2
-WHERE CONCAT(f1.FIRST_NAME, ' ', f1.LAST_NAME)  != CONCAT(f2.FIRST_NAME, ' ', f2.LAST_NAME) AND f1.JOB_ID = f2.JOB_ID
+WHERE f1.PHONE_NUMBER != f2.PHONE_NUMBER
+AND f1.JOB_ID = f2.JOB_ID
 ORDER BY CONCAT(f1.FIRST_NAME, ' ', f1.LAST_NAME), CONCAT(f2.FIRST_NAME, ' ', f2.LAST_NAME);
