@@ -1,10 +1,10 @@
-DELIMITER $$
-CREATE TRIGGER InsertDate
-AFTER INSERT ON w3schools.orders
-FOR EACH ROW
-BEGIN
+-- DELIMITER $$
+-- CREATE TRIGGER InsertDate
+-- AFTER INSERT ON w3schools.orders
+-- FOR EACH ROW
+-- BEGIN
 
-NOW(OrderDate)
+-- NOW(OrderDate)
 
-END;
-DELIMITER $$ ;
+-- END;
+-- DELIMITER $$ ;
