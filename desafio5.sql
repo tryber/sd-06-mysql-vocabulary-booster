@@ -1,4 +1,3 @@
-SELECT  J.JOB_TITLE AS 'Cargo', ROUND(J.MAX_SALARY - J.MIN_SALARY) AS 'Variação Salarial',
-Round(J.MIN_SALARY/12, 2) AS 'Média mínima mensal', Round(J.MAX_SALARY/12, 2) AS 'Média máxima mensal'
-FROM hr.jobs AS J INNER JOIN hr.employees AS Emp  
-ON J.JOB_ID = Emp.JOB_ID GROUP BY J.JOB_TITLE ORDER BY `Variação Salarial`, J.JOB_TITLE;
+SELECT  JOB_TITLE AS 'Cargo', ROUND(MAX_SALARY - MIN_SALARY) AS 'Variação Salarial',
+Round(MIN_SALARY/12, 2) AS 'Média mínima mensal', Round(MAX_SALARY/12, 2) AS 'Média máxima mensal'
+FROM hr.jobs  ORDER BY `Variação Salarial`, JOB_TITLE;
