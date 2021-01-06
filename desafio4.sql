@@ -9,7 +9,10 @@ SELECT
   END AS 'Senioridade'
 FROM
   hr.employees
-  INNER JOIN
-    jobs ON employees.JOB_ID = jobs.JOB_ID
-GROUP BY employees.JOB_ID
-ORDER BY ROUND(AVG(employees.SALARY),2) ASC, jobs.JOB_TITLE ASC
+INNER JOIN
+  jobs ON employees.JOB_ID = jobs.JOB_ID
+GROUP BY
+  employees.JOB_ID
+ORDER BY
+  ROUND(AVG(employees.SALARY),2) ASC,
+  jobs.JOB_TITLE ASC;
