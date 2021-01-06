@@ -1,4 +1,2 @@
-
 > sd-0x-mysql-vocabulary-booster@1.0.0 test /home/paulo/projects/sd-06-mysql-vocabulary-booster
 > jest --runInBand
-
