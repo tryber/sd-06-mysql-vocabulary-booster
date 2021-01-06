@@ -3,5 +3,5 @@ COUNT(o.employeeID) AS 'Total de pedidos'
 FROM w3schools.employees AS e
 INNER JOIN w3schools.orders AS o
 ON e.EmployeeID = o.EmployeeID
-GROUP BY CONCAT(e.FirstName)
+GROUP BY CONCAT(e.FirstName,' ',e.LastName)
 ORDER BY COUNT(o.employeeID) ASC;
