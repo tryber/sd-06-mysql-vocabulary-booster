@@ -4,4 +4,4 @@ orders.OrderDate AS `Data do pedido` FROM customers
 INNER JOIN orders ON orders.CustomerID = customers.CustomerID
 INNER JOIN shippers ON shippers.ShipperID = orders.ShipperID
 WHERE shippers.ShipperName <> 'Federal Shipping'
-ORDER BY `Nome de contato`, `Data do pedido`;
+ORDER BY `Nome de contato`, `Empresa que fez o envio`, `Data do pedido`;
