@@ -3,4 +3,4 @@ FROM w3schools.customers)
 UNION
 (SELECT Country
 FROM w3schools.suppliers)
-ORDER BY Páis LIMIT 5;
+ORDER BY País LIMIT 5;
