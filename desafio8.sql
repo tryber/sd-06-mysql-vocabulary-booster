@@ -7,4 +7,5 @@ FROM w3schools.orders o
     ON o.ShipperID = s.ShipperID
   LEFT JOIN w3schools.customers c
     ON o.CustomerID = c.CustomerID
+WHERE s.ShipperName IN ('Speedy Express', 'United Package')
 ORDER BY c.ContactName, s.ShipperName, o.OrderDate;
