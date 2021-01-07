@@ -1,11 +1,13 @@
--- USE hr.jobs; -- obrigatório para criar a procedure no banco correto
--- DELIMITER $$ -- definindo delimitador
--- CREATE PROCEDURE buscar_media_por_cargo(@JOB_TITLE) -- parâmetros
--- BEGIN -- delimitando o início do código SQL
+USE hr; 
+DELIMITER $$
 
--- JOB_TITLE AS 'Cargo',
--- ROUND(AVG(SALARY), 2) AS 'Média salarial',
-
--- END $$ -- delimitando o final do código SQL
--- DELIMITER ; -- muda o delimitador de volta para ; - o espaço entre
--- DELIMITER e o ';' é necessário
+CREATE PROCEDURE buscar_media_por_cargo(cargo VARCHAR(50))
+BEGIN 
+	SELECT
+	ROUND(AVG(e.SALARY), 2) AS 'Média salarial'
+	FROM employees AS e
+    INNER JOIN jobs AS j
+    ON e.JOB_ID = j.JOB_ID
+    WHERE j.JOB_TITLE = cargo;
+END $$ 
+DELIMITER ;
