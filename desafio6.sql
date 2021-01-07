@@ -1,1 +1,7 @@
-SELECT product_name, id FROM northwind.products ORDER BY product_name;
+-- SELECT CONCAT_WS(" ", hr.) AS 'Nome completo',
+-- hr.jobs.JOB_TITLE AS 'Cargo',
+-- DATE(MIN_) AS 'Data de início do cargo',
+--  AS 'Departamento'
+-- FROM hr.jobs
+-- ORDER BY hr., hr.jobs.JOB_TITLE;
+-- ORDER BY 'Variação Salarial', 'Cargo';
