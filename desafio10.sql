@@ -5,4 +5,4 @@ ROUND(SUM(order_details.Quantity) / COUNT(order_details.ProductID), 2) AS `Médi
 FROM products
 INNER JOIN order_details ON products.ProductID = order_details.ProductID
 GROUP BY `Produto` HAVING `Média` > 20
-ORDER BY `Média`;
+ORDER BY `Média`, `Produto`;
