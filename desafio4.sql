@@ -6,6 +6,6 @@ CASE
   ELSE 'CEO'
 END AS Senioridade
 FROM hr.jobs AS J
-INNER JOIN hr.employees AS E ON j.JOB_ID = E.JOB_ID
+INNER JOIN hr.employees AS E ON J.job_id = E.job_id
 GROUP BY Cargo
-ORDER BY `Média salarial`, Cargo;
+ORDER BY `Média salarial`, 'Cargo';
