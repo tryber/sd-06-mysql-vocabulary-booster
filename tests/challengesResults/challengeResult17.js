@@ -14,7 +14,7 @@ const challengeResult17 = [
   {
     'CustomerID': 4,
     'EmployeeID': 2,
-    'OrderDate': new Date().toLocaleDateString({ timeZone: 'UTC' }).toString().replace(/\//g,'-'),
+    'OrderDate': new Date().toISOString().split('T')[0],
     'ShipperID': 2
   }
 ];
