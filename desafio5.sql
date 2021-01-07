@@ -1,5 +1,5 @@
 SELECT T_JOB.JOB_TITLE AS Cargo,
-MAX(T_EMP.SALARY) - MIN(T_EMP.SALARY) AS 'Variação salarial',
+MAX(T_EMP.SALARY) - MIN(T_EMP.SALARY) AS 'Variação Salarial',
 ROUND(MIN(T_EMP.SALARY), 2) AS 'Média mínima mensal',
 ROUND(MAX(T_EMP.SALARY), 2) AS 'Média máxima mensal'
 FROM hr.jobs AS T_JOB
