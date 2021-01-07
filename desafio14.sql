@@ -7,7 +7,7 @@
 UNION
   (
     SELECT
-      DISTINCT customers.Country as "País cus"
+      DISTINCT customers.Country as "País cust"
     FROM
       w3schools.customers
   )
