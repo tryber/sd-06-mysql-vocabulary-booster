@@ -6,15 +6,13 @@ describe('Desafios iniciais', () => {
   let sequelize;
 
   beforeAll(async () => {
-    const {
-      MYSQL_USER,
-      MYSQL_PASSWORD,
-      HOSTNAME
-    } = process.env;
+    const { MYSQL_USER, MYSQL_PASSWORD, HOSTNAME } = process.env;
 
-    const importer = new Importer(
-      { user: MYSQL_USER, password: MYSQL_PASSWORD, host: HOSTNAME }
-    );
+    const importer = new Importer({
+      user: MYSQL_USER,
+      password: MYSQL_PASSWORD,
+      host: HOSTNAME,
+    });
 
     await importer.import('./w3schools.sql');
 
@@ -36,7 +34,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio8.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult8');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
@@ -45,7 +45,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio9.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult9');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
@@ -54,7 +56,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio10.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult10');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
@@ -63,7 +67,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio11.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult11');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
@@ -72,7 +78,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio13.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult13');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
@@ -81,7 +89,9 @@ describe('Desafios iniciais', () => {
       const challengeQuery = readFileSync('desafio14.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult14');
 
-      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(expectedResult);
+      expect(await sequelize.query(challengeQuery, { type: 'SELECT' })).toEqual(
+        expectedResult
+      );
     });
   });
 
