@@ -67,7 +67,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe.only('Exibe todos produtos **que já tiveram um pedido associado requerindo uma quantidade desse produto maior que 80**', () => {
+  describe('Exibe todos produtos **que já tiveram um pedido associado requerindo uma quantidade desse produto maior que 80**', () => {
     it('Verifica o desafio 13', async () => {
       const challengeQuery = readFileSync('desafio13.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult13');
@@ -76,7 +76,7 @@ describe('Desafios iniciais', () => {
     });
   });
 
-  describe('Considerando o conjunto formado pelas pessoas consumidoras e empresas fornecedoras de produtos, queremos saber quais são os cinco primeiros países distintos, em ordem alfabética, presentes nesse conjunto', () => {
+  describe.only('Considerando o conjunto formado pelas pessoas consumidoras e empresas fornecedoras de produtos, queremos saber quais são os cinco primeiros países distintos, em ordem alfabética, presentes nesse conjunto', () => {
     it('Verifica o desafio 14', async () => {
       const challengeQuery = readFileSync('desafio14.sql', 'utf8').trim();
       const expectedResult = require('./challengesResults/challengeResult14');
