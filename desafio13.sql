@@ -1,5 +1,5 @@
 SELECT pro.ProductName AS 'Produto',
-  pro.Price
+  pro.Price AS 'Preço'
 FROM w3schools.orders AS ord
   INNER JOIN w3schools.order_details AS ord_d
     ON ord.OrderID = ord_d.OrderID
