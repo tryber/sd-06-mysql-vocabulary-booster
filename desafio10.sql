@@ -1,9 +1,11 @@
-SELECT
-A.ContactName AS Nome,
-A.Country AS País,
-COUNT(B.Country) AS 'Número de compatriotas'
-FROM w3schools.customers AS A, w3schools.customers AS B
-WHERE A.ContactName <> B.ContactName
-AND A.Country = B.Country
-GROUP BY A.CustomerID
-ORDER BY A.ContactName;
+SELECT 
+ProductName AS Produto,
+MIN(Quantity) AS Mínima,
+MAX(Quantity) AS Máxima,
+ROUND(AVG(Quantity), 2) AS Média
+FROM w3schools.products AS p
+INNER JOIN w3schools.order_details AS o
+ON p.ProductID = o.ProductID
+GROUP BY ProductName
+HAVING Média > 20
+ORDER BY Média, ProductName;
