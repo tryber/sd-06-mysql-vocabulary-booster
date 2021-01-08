@@ -1,0 +1,12 @@
+USE hr;
+DELIMITER $$
+CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(50))
+RETURNS INT READS SQL DATA
+BEGIN
+DECLARE SEILA INT;
+SELECT COUNT(a.JOB_ID) FROM hr.job_history AS a
+INNER JOIN hr.employees AS b ON a.EMPLOYEE_ID = b.EMPLOYEE_ID 
+WHERE b.EMAIL = email INTO SEILA;
+RETURN SEILA;
+END $$
+DELIMITER ;
