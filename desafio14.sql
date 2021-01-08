@@ -11,4 +11,5 @@ FROM w3schools.order_details od
     ON c.CustomerId = o.CustomerID
 WHERE c.Country != s.Country
 GROUP BY s.Country
+ORDER BY s.Country
 LIMIT 5;
