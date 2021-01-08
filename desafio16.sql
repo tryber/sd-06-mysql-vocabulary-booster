@@ -6,10 +6,10 @@ RETURNS INT READS SQL DATA
 BEGIN
   DECLARE jobs_nbr INT;
   SELECT COUNT(jh.EMPLOYEE_ID)
-  FROM job_history jh
+  FROM hr.job_history jh
     LEFT JOIN hr.employees e
       ON jh.EMPLOYEE_ID = e.EMPLOYEE_ID
-  WHERE e.EMAIL = 'NKOCHHAR' INTO jobs_nbr;
+  WHERE e.EMAIL = email INTO jobs_nbr;
   RETURN jobs_nbr;
 END $$
 DELIMITER ;
