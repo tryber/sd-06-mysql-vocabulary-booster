@@ -1,7 +1,7 @@
 USE hr;
 DELIMITER $$
 CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(20))
-RETURNS VARCHAR(200) READS SQL DATA
+RETURNS INT READS SQL DATA
 BEGIN
 DECLARE result INT;
 SELECT COUNT(JH.EMPLOYEE_ID) AS 'total_empregos' INTO result FROM hr.job_history AS JH
