@@ -441,6 +441,4 @@ const challengeResult11 = [
   }
 ];
 
-console.log(challengeResult11.length)
-
 module.exports = challengeResult11;
