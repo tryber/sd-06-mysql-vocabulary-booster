@@ -1,6 +1,7 @@
+USE w3schools;
 DELIMITER $$
 CREATE TRIGGER insertDate
-BEFORE INSERT ON w3schools.orders
+BEFORE INSERT ON orders
 FOR EACH ROW
 BEGIN
 
