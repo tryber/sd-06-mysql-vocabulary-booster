@@ -6,5 +6,5 @@ FROM w3schools.products AS pr
 INNER JOIN w3schools.order_details AS prd
 ON pr.ProductID = prd.ProductID
 GROUP BY Produto
-HAVING Média >= 20
+HAVING Média > 20
 ORDER BY Média, Produto;
