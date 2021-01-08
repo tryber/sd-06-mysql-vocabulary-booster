@@ -1,1 +1,6 @@
-SELECT (5+6) AS "A", "de" AS "Trybe", (2+8) AS "eh";
+-- SELECT w3schools. AS 'Nome de contato',
+-- w3schools. AS 'Empresa que fez o envio',
+-- w3schools. AS 'Data do pedido',
+-- FROM w3schools.
+-- WHERE w3schools. = 'Speedy Express' OR United Package
+-- ORDER BY **Nome de contato**, **Empresa que fez o envio**, **Data do pedido**
