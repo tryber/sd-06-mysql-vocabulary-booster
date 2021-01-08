@@ -2,7 +2,7 @@ USE hr;
 DELIMITER $$
 
 CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(100))
-    RETURNS VARCHAR(100) READS SQL DATA
+RETURNS INT READS SQL DATA
 BEGIN
     DECLARE jobs INT;
     SELECT COUNT(jh.EMPLOYEE_ID)
@@ -14,4 +14,3 @@ BEGIN
 END $$
 
 DELIMITER ;
-SELECT buscar_quantidade_de_empregos_por_funcionario('NKOCHHAR');
