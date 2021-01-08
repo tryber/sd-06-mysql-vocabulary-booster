@@ -1,6 +1,6 @@
 SELECT DISTINCT c.ContactName AS Nome,
 c.Country AS "País",
-CountryNumbers.compatriotas AS "Número de compatriotas"
+CountryNumbers.compatriotas -1 AS "Número de compatriotas"
 FROM (
 SELECT Country, COUNT(Country) AS compatriotas
 FROM w3schools.customers
