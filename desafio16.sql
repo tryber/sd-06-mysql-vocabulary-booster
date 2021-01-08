@@ -1,9 +1,9 @@
 DELIMITER $$
 CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email CHAR(50))
- RETURNS INT deterministic 
- BEGIN
+  RETURNS INT deterministic 
+  BEGIN
   DECLARE
-   RESULT INT;
+    RESULT INT;
 SELECT
   COUNT(job_history.JOB_ID)
 FROM
@@ -13,6 +13,6 @@ WHERE
   email = employees.EMAIL INTO RESULT;
 RETURN RESULT;
 END $$
- DELIMITER ;
+  DELIMITER ;
 SELECT
   buscar_quantidade_de_empregos_por_funcionario('NKOCHHAR');

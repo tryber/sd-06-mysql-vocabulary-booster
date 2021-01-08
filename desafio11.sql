@@ -11,4 +11,3 @@ HAVING
   COUNT(c2.Country) - 1 <> 0
 ORDER BY
   Nome ASC
-

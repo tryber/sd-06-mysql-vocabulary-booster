@@ -8,7 +8,7 @@ INSERT
   SET
   NEW.OrderDate = NOW();
 END$$
- DELIMITER ;
+  DELIMITER ;
 
 INSERT INTO
   orders(CustomerID, EmployeeID, ShipperID)
