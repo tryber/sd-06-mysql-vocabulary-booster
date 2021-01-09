@@ -5,7 +5,7 @@ CREATE TRIGGER trigger_inserir_data_atual
 AFTER INSERT ON w3schools.orders
 FOR EACH ROW
 BEGIN
-INSERT INTO w3schools.orders(OrderDate)
+INSERT INTO OrderDate
 VALUES(NOW());
-END; $$
+END $$
 DELIMITER ;
