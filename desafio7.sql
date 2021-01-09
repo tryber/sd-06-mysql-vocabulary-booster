@@ -1,9 +1,7 @@
-select JOB.JOB_TITLE AS Cargo,
-CONCAT(EMPLOYEE.FIRST_NAME, ' ', EMPLOYEE.LAST_NAME) AS `Nome completo`,
-H.START_DATE AS `Data de início do cargo`,
-DEP.DEPARTMENT_NAME AS `Departamento`
-FROM hr.job_history AS H
-INNER JOIN hr.jobs AS JOB ON JOB.JOB_ID = H.JOB_ID
-INNER JOIN hr.employees AS EMPLOYEE ON EMPLOYEE.EMPLOYEE_ID = H.EMPLOYEE_ID
-INNER JOIN hr.departments AS DEP ON DEP.DEPARTMENT_ID = H.DEPARTMENT_ID
-ORDER BY `Nome completo` DESC, Cargo ASC;
+select ucase(concat(E.FIRST_NAME, ' ', E.LAST_NAME)) as `Nome completo`,
+H.START_DATE as `Data de início do cargo`,
+E.SALARY as `Salário`
+from hr.employees as E
+join hr.job_history as H on E.EMPLOYEE_ID = H.EMPLOYEE_ID
+where month(H.START_DATE) between 1 and 3
+order by concat(E.FIRST_NAME, ' ', E.LAST_NAME) asc, H.START_DATE asc;
