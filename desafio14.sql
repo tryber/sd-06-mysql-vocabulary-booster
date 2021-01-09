@@ -1,8 +1,5 @@
-SELECT
-ProductName AS `Produto`,
-Price AS 'Preço'
-FROM w3schools.products AS p
-INNER JOIN w3schools.order_details AS o
-ON o.ProductID = p.ProductID
-AND o.Quantity > 80
-ORDER BY `Produto`;
+(SELECT Country AS `País` FROM w3schools.customers AS c)
+UNION
+(SELECT Country FROM w3schools.suppliers AS s)
+ORDER BY `País`
+LIMIT 5;
