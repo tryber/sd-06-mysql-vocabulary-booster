@@ -7,5 +7,4 @@ JOIN hr.jobs AS j
 ON j.JOB_ID = e.JOB_ID
 JOIN hr.departments AS d
 ON e.DEPARTMENT_ID = d.DEPARTMENT_ID
-GROUP BY Cargo
-ORDER BY `Nome completo`, Cargo DESC;
+ORDER BY `Nome completo` DESC, Cargo ASC;
