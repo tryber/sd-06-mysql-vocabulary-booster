@@ -1,8 +1,8 @@
-SELECT A.CustomerName AS Nome,
+SELECT A.ContactName AS Nome,
 A.Country AS `País`,
-COUNT(B.CustomerName) AS `Número de compatriotas`
-FROM w3schools.customers AS A,
-w3schools.customers AS B
-WHERE A.Country = B.Country AND A.CustomerName <> B.CustomerName
-GROUP BY A.CustomerName
-ORDER BY A.CustomerName;
+COUNT(B.ContactName) AS `Número de compatriotas`
+FROM w3schools.customers AS A
+INNER JOIN w3schools.customers AS B
+WHERE A.Country = B.Country AND A.ContactName <> B.ContactName
+GROUP BY Nome
+ORDER BY Nome;
