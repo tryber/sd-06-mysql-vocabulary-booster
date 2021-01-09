@@ -2,10 +2,9 @@ USE w3schools;
 
 DELIMITER $$
 CREATE TRIGGER trigger_inserir_data_atual
-AFTER INSERT ON w3schools.orders
+AFTER INSERT ON orders
 FOR EACH ROW
 BEGIN
-INSERT INTO orders(OrderDate)
-VALUES(NOW());
-END $$
+SET NEW.OrderDate = NOW();
+END; $$
 DELIMITER ;
