@@ -1,5 +1,5 @@
 select ucase(concat(E.FIRST_NAME, ' ', E.LAST_NAME)) as `Nome completo`,
-H.START_DATE as `Data de início do cargo`,
+H.START_DATE as `Data de início`,
 E.SALARY as `Salário`
 from hr.employees as E
 join hr.job_history as H on H.EMPLOYEE_ID = E.EMPLOYEE_ID
