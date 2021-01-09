@@ -9,6 +9,6 @@ INNER JOIN jobs ON employees.job_id = jobs.job_id
 WHERE job_title = search_term;
 END $$
 
-DELIMITER ;
+DELIMITER;
 
 CALL buscar_media_por_cargo('Programmer');
