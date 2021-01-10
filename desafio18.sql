@@ -1,0 +1,31 @@
+USE hr;
+DROP FUNCTION IF EXISTS converte_data;
+DELIMITER $$
+CREATE FUNCTION converte_data(data_padrao DATE)
+RETURNS VARCHAR(12) READS SQL DATA
+BEGIN
+  RETURN DATE_FORMAT(data_padrao, "%d-%m-%Y");
+END $$
+
+DROP FUNCTION IF EXISTS calcula_anos;
+CREATE FUNCTION calcula_anos(data_inicio DATE, data_fim DATE)
+RETURNS DECIMAL(4,2) READS SQL DATA
+BEGIN
+  RETURN ROUND(YEAR(data_fim) - YEAR(data_inicio), 2);
+END $$
+DELIMITER ;
+
+SELECT CONCAT(T_EMP.FIRST_NAME, " ", T_EMP.LAST_NAME) AS 'Nome completo',
+T_JOBS.JOB_TITLE AS Cargo,
+converte_data(T_HIST.START_DATE) AS 'Data de início',
+converte_data(T_HIST.END_DATE) AS 'Data de recisão',
+calcula_anos(T_HIST.START_DATE, T_HIST.END_DATE) AS 'Anos trabalhados'
+FROM hr.job_history AS T_HIST
+INNER JOIN hr.employees AS T_EMP
+ON T_EMP.EMPLOYEE_ID = T_HIST.EMPLOYEE_ID
+INNER JOIN hr.jobs AS T_JOBS
+ON T_HIST.JOB_ID = T_JOBS.JOB_ID
+INNER JOIN hr.departments AS T_DP
+ON T_HIST.DEPARTMENT_ID = T_DP.DEPARTMENT_ID
+ORDER BY CONCAT(T_EMP.FIRST_NAME, " ", T_EMP.LAST_NAME) DESC, calcula_anos(T_HIST.START_DATE, T_HIST.END_DATE);
+
