@@ -1,4 +1,4 @@
-select JOB_TITLE as Cargo, MAX_SALARY, MIN_SALARY,
+select JOB_TITLE as Cargo,
 round(((MAX_SALARY-MIN_SALARY)/2), 2) as `Média salarial`,
 case 
 when round(((MAX_SALARY-MIN_SALARY)/2), 2) between 2000 and 5800 then 'Júnior'
