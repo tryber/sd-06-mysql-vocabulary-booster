@@ -9,6 +9,7 @@ BEGIN
   WHERE J.job_title = nome_cargo;
 END $$ 
 
- DELIMITER ; 
+  DELIMITER ; 
 
 CALL buscar_media_por_cargo('Programmer');
+
