@@ -8,4 +8,4 @@ JOIN w3schools.products AS prod
 ON odet.ProductID = prod.ProductID
 WHERE odet.Quantity > 20
 GROUP BY prod.ProductName
-ORDER BY `Média`, prod.ProductName;
+ORDER BY ROUND(AVG(odet.Quantity), 2), prod.ProductName;

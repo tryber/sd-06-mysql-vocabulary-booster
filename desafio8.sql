@@ -8,4 +8,4 @@ ON ship.ShipperID = ord.ShipperID
 JOIN w3schools.customers AS cust
 ON ord.CustomerID = cust.CustomerID
 WHERE ship.ShipperName IN ('Speedy Express', 'United Package')
-ORDER BY cust.ContactName, ship.ShipperName;
+ORDER BY cust.ContactName, ship.ShipperName, ord.OrderDate;
