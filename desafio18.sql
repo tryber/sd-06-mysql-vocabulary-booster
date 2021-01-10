@@ -1,27 +1,7 @@
-USE hr;
-DROP FUNCTION IF EXISTS converte_data;
-
-DELIMITER $$
-CREATE FUNCTION converte_data(data_padrao DATE)
-RETURNS VARCHAR(12) READS SQL DATA
-BEGIN
-  RETURN DATE_FORMAT(data_padrao, "%d/%m/%Y");
-END $$
-DELIMITER ;
-
-DROP FUNCTION IF EXISTS calcula_anos;
-DELIMITER $$
-CREATE FUNCTION calcula_anos(data_inicio DATE, data_fim DATE)
-RETURNS DECIMAL(4, 2) READS SQL DATA
-BEGIN
-  RETURN ROUND(TIMESTAMPDIFF(day, data_inicio, data_fim)/365, 2);
-END $$
-DELIMITER ;
-
 SELECT CONCAT(T_EMP.FIRST_NAME, " ", T_EMP.LAST_NAME) AS 'Nome completo',
-converte_data(T_HIST.START_DATE) AS 'Data de início',
-converte_data(T_HIST.END_DATE) AS 'Data de recisão',
-calcula_anos(T_HIST.START_DATE, T_HIST.END_DATE) AS 'Anos trabalhados'
+DATE_FORMAT(T_HIST.START_DATE, "%d/%m/%Y") AS 'Data de início',
+DATE_FORMAT(T_HIST.END_DATE, "%d/%m/%Y") AS 'Data de recisão',
+ROUND(TIMESTAMPDIFF(day, T_HIST.START_DATE, T_HIST.END_DATE)/365, 2) AS 'Anos trabalhados'
 FROM hr.job_history AS T_HIST
 INNER JOIN hr.employees AS T_EMP
 ON T_EMP.EMPLOYEE_ID = T_HIST.EMPLOYEE_ID
