@@ -10,4 +10,5 @@ FROM
     FROM
         w3schools.customers
     GROUP BY Country) AS s ON s.Country = c.Country
+HAVING `Número de compatriotas` > 0
 ORDER BY `Nome`;
