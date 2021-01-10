@@ -6,7 +6,7 @@ FROM
     w3schools.customers AS c
         INNER JOIN
     (SELECT 
-        Country, COUNT(Country) AS `Número de compatriotas`
+        Country, (COUNT(Country) - 1) AS `Número de compatriotas`
     FROM
         w3schools.customers
     GROUP BY Country) AS s ON s.Country = c.Country
