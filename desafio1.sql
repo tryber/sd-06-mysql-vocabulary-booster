@@ -7,3 +7,4 @@ ORDER BY COUNTRY_NAME;
 -- https://www.sqlservertutorial.net/
 -- https://www.w3schools.com/sql/default.asp
 -- https://www.tutorialspoint.com/sql/index.htm
+-- REPOSITORIOS GITHUB CONSULTADOS = ANDRÉ POSSAS
