@@ -7,8 +7,9 @@ FROM w3schools.customers AS CTABLE01
 JOIN w3schools.customers AS CTABLE02
 
 WHERE CTABLE01.Country = CTABLE02.Country
+AND CTABLE01.CustomerName <> CTABLE02.CustomerName
 
 GROUP BY CTABLE01.CustomerID
-HAVING COUNT(CTABLE01.Country - 1) > 0
+-- HAVING COUNT(CTABLE01.Country - 1) > 0
 
 ORDER BY CTABLE01.CustomerName;
