@@ -1,8 +1,14 @@
--- SELECT 
--- AS 'Nome',
--- AS 'País',
--- AS 'Número de compatriotas'
+SELECT 
+CTABLE01.CustomerName AS 'Nome',
+CTABLE01.Country AS 'País',
+COUNT(CTABLE01.Country - 1) AS 'Número de compatriotas'
 
--- FROM
+FROM w3schools.customers AS CTABLE01
+JOIN w3schools.customers AS CTABLE02
 
--- ORDER BY "**Nome**";
+WHERE CTABLE01.Country = CTABLE02.Country
+
+GROUP BY CTABLE01.CustomerID
+HAVING COUNT(CTABLE01.Country - 1) > 0
+
+ORDER BY CTABLE01.CustomerName;
