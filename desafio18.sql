@@ -1,10 +1,11 @@
 USE hr;
 DROP FUNCTION IF EXISTS converte_data;
+
 DELIMITER $$
 CREATE FUNCTION converte_data(data_padrao DATE)
 RETURNS VARCHAR(12) READS SQL DATA
 BEGIN
-  RETURN DATE_FORMAT(data_padrao, "%d-%m-%Y");
+  RETURN DATE_FORMAT(data_padrao, "%d/%m/%Y");
 END $$
 
 DROP FUNCTION IF EXISTS calcula_anos;
