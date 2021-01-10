@@ -9,14 +9,13 @@ END $$
 
 DROP FUNCTION IF EXISTS calcula_anos;
 CREATE FUNCTION calcula_anos(data_inicio DATE, data_fim DATE)
-RETURNS DECIMAL(4,2) READS SQL DATA
+RETURNS DECIMAL(4, 2) READS SQL DATA
 BEGIN
-  RETURN ROUND(YEAR(data_fim) - YEAR(data_inicio), 2);
+  RETURN ROUND(TIMESTAMPDIFF(day, data_inicio, data_fim)/365, 2);
 END $$
 DELIMITER ;
 
 SELECT CONCAT(T_EMP.FIRST_NAME, " ", T_EMP.LAST_NAME) AS 'Nome completo',
-T_JOBS.JOB_TITLE AS Cargo,
 converte_data(T_HIST.START_DATE) AS 'Data de início',
 converte_data(T_HIST.END_DATE) AS 'Data de recisão',
 calcula_anos(T_HIST.START_DATE, T_HIST.END_DATE) AS 'Anos trabalhados'
