@@ -1,2 +1,11 @@
-SELECT supplier_id FROM northwind.purchase_orders
-WHERE supplier_id BETWEEN 1 AND 3;
+SELECT
+w3schools.customers.Country AS 'País'
+FROM w3schools.customers
+
+UNION
+
+SELECT
+w3schools.suppliers.Country AS 'País'
+FROM w3schools.suppliers
+
+ORDER BY `País`;
