@@ -8,4 +8,4 @@ SELECT
 w3schools.suppliers.Country AS 'País'
 FROM w3schools.suppliers
 
-ORDER BY `País`;
+ORDER BY `País` LIMIT 5;
