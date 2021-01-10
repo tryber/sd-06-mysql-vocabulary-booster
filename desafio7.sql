@@ -4,5 +4,5 @@ employees.SALARY AS 'Salário'
 FROM hr.employees
 INNER JOIN hr.job_history AS jh
 ON employees.EMPLOYEE_ID = jh.EMPLOYEE_ID
-WHERE MONTH(jh.START_DATE) = 1 OR 2 OR 3
-ORDER BY `Nome completo`, jh.START_DATE;
+WHERE MONTH(jh.START_DATE) BETWEEN 1 AND 3
+ORDER BY `Nome completo` ASC, jh.START_DATE DESC;
