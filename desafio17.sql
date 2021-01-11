@@ -1,7 +1,3 @@
-SELECT 
-    *
-FROM
-    w3schools.orders;
 USE w3schools;
 DELIMITER $$
 CREATE TRIGGER insert_data_atual
