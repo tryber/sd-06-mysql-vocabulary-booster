@@ -18,7 +18,6 @@ SELECT
 CONCAT(epy1.FIRST_NAME, ' ', epy1.LAST_NAME) AS `Nome completo funcionário 1`,
 epy1.SALARY AS `Salário funcionário 1`,
 epy1.PHONE_NUMBER AS `Telefone funcionário 1`,
-
 CONCAT(epy2.FIRST_NAME, ' ', epy2.LAST_NAME) AS `Nome completo funcionário 2`,
 epy2.SALARY AS `Salário funcionário 2`,
 epy2.PHONE_NUMBER AS `Telefone funcionário 2`
