@@ -5,6 +5,6 @@ ROUND(AVG(order_details.quantity),2) AS `Média`
 FROM (w3schools.products
 INNER JOIN w3schools.order_details
 ON products.productid = order_details.productid)
-GROUP BY `Produto`
+GROUP BY products.productname
 HAVING Média > 20
-ORDER BY `Média` ASC;
+ORDER BY ROUND(AVG(order_details.quantity),2), products.productname ASC;
