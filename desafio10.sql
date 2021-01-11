@@ -6,4 +6,5 @@ from w3schools.products as p
 inner join w3schools.order_details as o
 on p.ProductID = o.ProductID
 group by `Produto`
-having `Média` > 20; 
+having `Média` > 20
+order by `Média`, `Produto`;
