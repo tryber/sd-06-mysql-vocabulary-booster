@@ -1,3 +1,4 @@
+--desafio9.sql
 SELECT CONCAT(employees.firstname, ' ', employees.lastname) AS `Nome completo`,
 count(orders.employeeid) AS `Total de pedidos`
 FROM (w3schools.employees

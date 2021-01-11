@@ -1,3 +1,4 @@
+--desafio7.sql
 SELECT UCASE(CONCAT(employees.first_name, ' ', employees.last_name)) AS `Nome completo`,
 job_history.start_date AS `Data de início`,
 employees.salary AS `Salário`
