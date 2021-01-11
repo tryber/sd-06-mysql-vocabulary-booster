@@ -8,4 +8,5 @@ INNER JOIN hr.employees
 ON job_history.employee_id = employees.employee_id)
 INNER JOIN hr.departments
 ON job_history.department_id = departments.department_id)
-ORDER BY `Nome completo` ASC;
+WHERE MONTH(job_history.start_date) BETWEEN 0 AND 4
+ORDER BY `Nome completo` ASC, `Data de início` ASC;
