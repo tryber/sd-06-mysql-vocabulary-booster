@@ -4,7 +4,7 @@ SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS `Nome completo`,
   (
   SELECT DEPARTMENT_NAME 
   FROM hr.departments d
-   WHERE e.DEPARTMENT_ID = d.DEPARTMENT_ID
+    WHERE e.DEPARTMENT_ID = d.DEPARTMENT_ID
   ) AS `Departamento`
 FROM hr.employees AS e
   LEFT JOIN hr.jobs AS j
