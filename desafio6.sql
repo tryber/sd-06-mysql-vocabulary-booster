@@ -3,7 +3,7 @@ SELECT CONCAT(FIRST_NAME, " ", LAST_NAME) AS `Nome completo`,
   START_DATE AS `Data de início do cargo`,
   DEPARTMENT_NAME AS `Departamento`
 FROM hr.job_history AS jh
-  LEFT JOIN hr.jobs AS j
+  INNER JOIN hr.jobs AS j
     ON jh.JOB_ID = j.JOB_ID
   LEFT JOIN hr.employees AS e
     ON jh.EMPLOYEE_ID = e.EMPLOYEE_ID
