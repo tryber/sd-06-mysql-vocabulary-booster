@@ -4,4 +4,4 @@ n.SALARY AS `Salário`
 FROM hr.job_history AS S
 JOIN hr.employees AS N ON S.EMPLOYEE_ID = N.EMPLOYEE_ID
 where month(START_DATE) <= 3
-ORDER BY `Nome completo`, `Data de início`; 
+ORDER BY `Nome completo` ASC, `Data de início` ASC;
