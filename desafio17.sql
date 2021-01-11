@@ -6,13 +6,12 @@
 -- Retomando que não é necessário incluir as queries para INSERIR e SELECIONAR, elas já vão ser executadas automaticamente pelo próprio teste.
 -- SELECT * FROM w3schools.orders;
 USE w3schools;
-DROP TRIGGER IF EXISTS currentOrderDate;
 
 DELIMITER $$
 CREATE TRIGGER currentOrderDate
 BEFORE INSERT ON orders
 FOR EACH ROW
 BEGIN
-    SET NEW.OrderDate = CurrentDate();
+    SET NEW.OrderDate = CURRENT_DATE();
 END; $$
 DELIMITER ;
