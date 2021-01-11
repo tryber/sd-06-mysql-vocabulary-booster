@@ -1,4 +1,3 @@
---desafio10.sql
 SELECT products.productname AS `Produto`,
 MIN(order_details.quantity) AS `Mínima`,
 MAX(order_details.quantity) AS `Máxima`,

@@ -1,4 +1,3 @@
---desafio6.sql
 SELECT CONCAT(employees.first_name, ' ', employees.last_name) AS `Nome completo`,
 jobs.job_title AS `Cargo`,
 job_history.start_date AS `Data de início do cargo`,

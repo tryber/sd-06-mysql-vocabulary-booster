@@ -1,4 +1,3 @@
---desafio4.sql
 SELECT j.JOB_TITLE AS `Cargo`, ROUND(AVG(e.SALARY),2) AS `Média salarial`,
 CASE
 WHEN  ROUND(AVG(e.SALARY),2) < 5800 THEN  'Júnior'

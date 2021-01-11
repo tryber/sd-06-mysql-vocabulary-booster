@@ -1,4 +1,3 @@
---desafio3.sql
 SELECT JOB_TITLE AS `Cargo`,
 CASE WHEN MAX_SALARY THEN MAX_SALARY-MIN_SALARY
 END AS `Diferença entre salários máximo e mínimo`
