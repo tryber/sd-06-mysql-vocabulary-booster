@@ -3,4 +3,5 @@ CASE
 WHEN REGION_ID = 1 THEN 'incluído'
 ELSE 'não incluído'
 END AS 'Status Inclusão'
-from hr.countries;
+from hr.countries
+ORDER BY COUNTRY_NAME;
