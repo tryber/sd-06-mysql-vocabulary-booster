@@ -4,7 +4,7 @@ DELIMITER $$
 CREATE FUNCTION exibir_quantidade_pessoas_contratadas_por_mes_e_ano(mes INT, ano INT)
 RETURNS INT READS SQL DATA
 BEGIN
-DECLARE total_contratados INT;
+  DECLARE total_contratados INT;
 SELECT 
     COUNT(*)
 FROM
@@ -16,3 +16,4 @@ RETURN total_contratados;
 END $$
 
 DELIMITER ;
+SELECT exibir_quantidade_pessoas_contratadas_por_mes_e_ano(06, 1987);
