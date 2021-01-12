@@ -1,6 +1,11 @@
-SELECT c.ContactName AS 'Nome de contato',
-s.ShipperName AS 'Empresa que fez o envio',
-o.OrderDate AS 'Data do pedido'
-FROM w3schools.customers AS c, w3schools.orders AS o, w3schools.shippers AS s
-WHERE c.CustomerID = o.CustomerID AND o.ShipperID IN (1, 2) AND o.ShipperID = s.ShipperID
-ORDER BY c.ContactName ASC, s.ShipperName ASC, o.OrderDate ASC;
+SELECT 
+c.ContactName AS `Nome de Contato`,
+s.ShipperName AS `Empresa que fez o envio`,
+o.OrderDate AS `Data do pedido`
+FROM w3schools.customers AS c
+INNER JOIN w3schools.orders AS o
+ON o.CustomerID = c.CustomerID
+INNER JOIN w3schools.shippers AS s
+ON s.ShipperID = o.ShipperID 
+WHERE s.ShipperName IN ('Speedy Express', 'United Package')
+ORDER BY `Nome de Contato`, `Empresa que fez o envio`, `Data do pedido`;
