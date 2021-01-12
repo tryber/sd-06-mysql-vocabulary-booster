@@ -11,7 +11,8 @@ FROM hr.job_history AS JH
 JOIN hr.employees AS E ON E.EMPLOYEE_ID = JH.EMPLOYEE_ID
 JOIN hr.departments AS D ON D.DEPARTMENT_ID = JH.DEPARTMENT_ID
 JOIN hr.jobs as J ON J.JOB_ID = JH.JOB_ID
-WHERE E.EMAIL = email;
+WHERE E.EMAIL = email
+ORDER BY `Departamento`, `Cargo`;
 END $$
 
 DELIMITER ;
