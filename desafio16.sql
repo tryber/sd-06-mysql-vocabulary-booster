@@ -9,7 +9,7 @@ DECLARE total INT;
 SELECT COUNT(*)
 FROM hr.job_history AS J 
 JOIN hr.employees AS E ON E.EMPLOYEE_ID = J.EMPLOYEE_ID
-WHERE E.EMAIL = 'NKOCHHAR'
+WHERE E.EMAIL = email
 INTO total;
 RETURN total;
 END $$
