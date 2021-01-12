@@ -1,7 +1,7 @@
 SELECT 
     CONCAT(e.first_name, ' ', e.last_name) AS 'Nome completo',
-    jh.START_DATE AS 'Data de início',
-    jh.END_DATE AS 'Data de rescisão',
+    DATE_FORMAT(jh.START_DATE, '%d/%m/%Y') AS 'Data de início',
+    DATE_FORMAT(jh.END_DATE, '%d/%m/%Y') AS 'Data de rescisão',
     ROUND(DATEDIFF(jh.END_DATE, jh.START_DATE) / 365,
             2) AS 'Anos trabalhados'
 FROM
