@@ -8,5 +8,6 @@ FROM w3schools.customers,
     FROM w3schools.customers
     GROUP BY Country
   ) AS g
-WHERE Country = g.p
+WHERE Country = g.p 
+  AND g.c > 0
 ORDER BY Nome;
