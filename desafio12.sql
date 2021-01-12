@@ -1,8 +1,8 @@
 SELECT CONCAT(one.FIRST_NAME, ' ', one.LAST_NAME) AS `Nome completo funcionário 1`,
-one.salary AS `Salario funcionário 1`,
+one.salary AS `Salário funcionário 1`,
 one.phone_number AS `Telefone funcionário 1`,
 CONCAT(two.FIRST_NAME, ' ', two.LAST_NAME) AS `Nome completo funcionário 2`,
-two.salary AS `Salario funcionário 2`,
+two.salary AS `Salário funcionário 2`,
 two.phone_number AS `Telefone funcionário 2`
 FROM (hr.employees AS two
 INNER JOIN hr.employees AS one
