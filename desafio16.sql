@@ -4,7 +4,7 @@ DELIMITER $$
 CREATE FUNCTION buscar_quantidade_de_empregos_por_funcionario(email VARCHAR(100))
 RETURNS INT READS SQL DATA
 BEGIN
- DECLARE total_empregos INT;
+  DECLARE total_empregos INT;
 SELECT 
     COUNT(*) AS 'total_empregos'
 FROM
