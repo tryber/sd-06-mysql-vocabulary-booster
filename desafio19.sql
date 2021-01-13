@@ -5,7 +5,7 @@ RETURNS INT READS SQL DATA
 BEGIN
   DECLARE hired_employees INT;
   SELECT
-    COUNT jh.JOB_ID 'que foram contratadas'
+    COUNT(jh.JOB_ID) 'que foram contratadas'
     FROM hr.job_history jh
   WHERE MONTH(jh.START_DATE) = month AND YEAR(jh.START_DATE) = year
     INTO hired_employees;
