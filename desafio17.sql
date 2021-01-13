@@ -1,0 +1,13 @@
+USE w3chools;
+
+DELIMITER $$
+
+CREATE TRIGGER insertCurrentDate
+BEFORE INSERT ON orders
+FOR EACH ROW
+
+BEGIN
+	SET NEW.OrderDate = CURRENT_DATE();
+END $$
+
+DELIMITER ;
