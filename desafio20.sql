@@ -4,18 +4,18 @@ DELIMITER $$
 CREATE PROCEDURE exibir_historico_completo_por_funcionario(IN employee_email VARCHAR(255))
 BEGIN
 
-SELECT CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) AS 'Nome completo',
-d.DEPARTMENT_NAME AS 'Departamento',
-j.JOB_TITLE AS 'Cargo'
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Nome completo',
+d.department_name AS 'Departamento',
+j.job_title AS 'Cargo'
 FROM hr.employees AS e
 LEFT JOIN hr.job_history AS jh
-ON e.EMPLOYEE_ID = jh.EMPLOYEE_ID
+ON e.employee_id = jh.employee_id
 LEFT JOIN hr.departments AS d
-ON d.DEPARTMENT_ID = jh.DEPARTMENT_ID
+ON d.department_id = jh.department_id
 LEFT JOIN hr.jobs AS j
-ON j.JOB_ID = jh.JOB_ID
+ON j.job_id = jh.job_id
 WHERE e.EMAIL = employee_email
-ORDER BY d.DEPARTMENT_NAME ASC, j.JOB_TITLE ASC;
+ORDER BY d.department_name ASC, j.job_title ASC;
 
 END $$
 
