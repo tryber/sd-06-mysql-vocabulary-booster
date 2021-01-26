@@ -8,4 +8,3 @@ FROM hr.employees AS e
   INNER JOIN hr.departments AS d ON d.DEPARTMENT_ID = jh.DEPARTMENT_ID
 ORDER BY `Nome completo` DESC,
   j.JOB_TITLE;
-  
