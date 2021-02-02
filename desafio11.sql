@@ -1,0 +1,3 @@
+SELECT JOB_TITLE AS 'Cargo',
+FROM hr.jobs
+ORDER BY
