@@ -1,4 +1,3 @@
-
 USE hr;
 DELIMITER $$
 CREATE FUNCTION exibir_quantidade_pessoas_contratadas_por_mes_e_ano(searched_month INT, searched_year INT)
