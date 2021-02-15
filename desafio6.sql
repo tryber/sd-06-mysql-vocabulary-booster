@@ -10,4 +10,5 @@ LEFT JOIN hr.jobs J
 ON JH.JOB_ID = J.JOB_ID
 LEFT JOIN hr.departments D
 ON JH.DEPARTMENT_ID = D.DEPARTMENT_ID
+WHERE JH.EMPLOYEE_ID <> 0
 ORDER BY `Nome completo` DESC, `Cargo`;
